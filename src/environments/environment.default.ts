@@ -1,4 +1,4 @@
-export const environment = {
+export const environmentDefault = {
   firebase:{
     apiKey: "AIzaSyB9CF2vo4FO8AuGe1VVETXFAyrR-ZBGP2w",
     authDomain: "searchint-1bace.firebaseapp.com",
