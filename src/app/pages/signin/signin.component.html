@@ -13,8 +13,8 @@
     <form>
       <label for="chk" aria-hidden="true">Sign up</label>
       <input type="text" name="txt" placeholder="User name" required="">
-      <input type="email" name="email" placeholder="Email" required="">
-      <input type="password" name="pswd" placeholder="Password" required="">
+      <input type="email" name="email2" placeholder="Email" required="">
+      <input type="password" name="pswd2" placeholder="Password" required="">
       <button>Sign up</button>
       <button mat-raised-button color="primary" class="button-loader">
         <mat-spinner  diameter="10"></mat-spinner>
@@ -23,17 +23,19 @@
   </div>
 
   <div class="login">
-    <form>
+    <form [formGroup]="form">
       <label for="chk" aria-hidden="true">Login</label>
-      <input type="email" name="email" placeholder="Email" required="">
-      <input type="password" name="pswd" placeholder="Password" required="">
+      <input type="email"  formControlName="email" name="email" placeholder="Email" required>
+      <input type="password" formControlName="password" name="password" placeholder="Password" required>
       <button mat-button>Recovery password</button>
-      <button (click)="login()" *ngIf="IsLoggingIn">Login</button>
-      <button mat-raised-button color="primary" class="button-loader">
-        <mat-spinner color="accent" diameter="20"></mat-spinner>
+      <button mat-raised-button color="primary" class="button-loader" *ngIf="IsLoggingIn">
+        <mat-spinner color="accent" diameter="20" ></mat-spinner>
       </button>
+      <button (click)="login()" *ngIf="!IsLoggingIn">Login</button>
+
     </form>
   </div>
+
 </div>
 </body>
 </html>
