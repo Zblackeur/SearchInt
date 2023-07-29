@@ -1,1 +1,28 @@
-<p>job-recommendation works!</p>
+<div>
+  <h2>Recommandation d'offres d'emploi</h2>
+  <div>
+    <label>Compétence :</label>
+    <input type="text" [(ngModel)]="competence">
+  </div>
+  <div>
+    <label>Niveau d'études :</label>
+    <input type="text" [(ngModel)]="niveauEtudes">
+  </div>
+  <div>
+    <label>Expérience :</label>
+    <input type="number" [(ngModel)]="experience">
+  </div>
+  <div>
+    <label>Emplacement :</label>
+    <input type="text" [(ngModel)]="emplacement">
+  </div>
+  <button (click)="getAnnoncesRecommandees()">Obtenir les annonces recommandées</button>
+  <div *ngIf="annoncesRecommandees">
+    <h3>Annonces recommandées :</h3>
+    <ul>
+      <li *ngFor="let annonce of annoncesRecommandees">
+        {{ annonce.titre }} - {{ annonce.emplacement }} - {{ annonce.salaire }}
+      </li>
+    </ul>
+  </div>
+</div>
