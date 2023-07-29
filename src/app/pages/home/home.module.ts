@@ -4,6 +4,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {SigninComponent} from "../signin/signin.component";
 import {HomeComponent} from "./home.component";
 import { NavbarModule } from "../../components/navbar/navbar.module";
+import {JobRecommendationModule} from "../../components/job-recommendation/job-recommendation.module";
 
 const routes : Routes =[
   {
@@ -17,7 +18,8 @@ const routes : Routes =[
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    NavbarModule
+    NavbarModule,
+    JobRecommendationModule
   ]
 })
 export class HomeModule { }
