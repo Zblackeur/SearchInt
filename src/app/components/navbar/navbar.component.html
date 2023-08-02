@@ -1,5 +1,8 @@
 <mat-toolbar color="primary">
-  <div>example@email.com</div>
+  <div *ngIf="userEmail">
+    <p>{{ userEmail }}</p>
+    <!-- Vous pouvez ajouter d'autres éléments pour afficher d'autres informations de l'utilisateur -->
+  </div>
   <button mat-button color="accent" (click)="logout()" test-id="logout-button">
     Logout
   </button>

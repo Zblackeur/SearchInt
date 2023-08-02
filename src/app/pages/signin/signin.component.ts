@@ -13,6 +13,7 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 export class SigninComponent implements OnInit {
   IsLoggingIn = false;
   form!: FormGroup;
+  //user$=  this.authenticationService.currentUser$;
 
 
   constructor(
@@ -85,7 +86,7 @@ export class SigninComponent implements OnInit {
 
 
     }).subscribe({
-      next: () => this.router.navigate(['home']),
+      next: () => this.router.navigate(['home'],{ queryParams: { email: this.form.value.email } }),
       error: error => {
         this.IsLoggingIn = false;
         this.snackBar.open(error.message, "OK", {

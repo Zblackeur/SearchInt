@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationService} from "../services/authentification.service";
 
 @Component({
@@ -11,10 +11,19 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
+  userEmail: string | undefined;
+
+
+
 
   ngOnInit(): void {
+    // Récupérer les informations de l'utilisateur depuis les paramètres d'URL
+    this.route.queryParams.subscribe(params => {
+      this.userEmail = params['email'];
+    });
   }
 
   logout() {

@@ -1,3 +1,10 @@
 <app-navbar></app-navbar>
 <p>home works!</p>
+
+<div *ngIf="userEmail">
+  <h3>Informations de l'utilisateur connecté :</h3>
+  <p>Email: {{ userEmail }}</p>
+  <!-- Vous pouvez ajouter d'autres éléments pour afficher d'autres informations de l'utilisateur -->
+</div>
+
 <app-job-recommendation></app-job-recommendation>
